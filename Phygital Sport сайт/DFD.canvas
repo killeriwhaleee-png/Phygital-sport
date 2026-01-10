@@ -1,0 +1,27 @@
+{
+	"nodes":[
+		{"id":"eb85870c970234f3","x":-460,"y":100,"width":250,"height":60,"type":"text","text":"Пользователь (гости, участники, )"},
+		{"id":"ccabfba7112ed9d5","x":120,"y":100,"width":250,"height":60,"type":"text","text":"Веб-сайт"},
+		{"id":"1f28a0907b95f6bd","x":-458,"y":300,"width":830,"height":240,"type":"text","text":"База данных:\n"},
+		{"id":"d7715c4e3f0c5280","x":-430,"y":350,"width":220,"height":160,"type":"text","text":"Пользователи:\n- логины\n- профили\n- роли"},
+		{"id":"a2cb0bb63c4bac72","x":-158,"y":350,"width":230,"height":160,"type":"text","text":"События:\n- турниры\n- тренировки\n- результаты\n"},
+		{"id":"f8c450238e6e14ff","x":120,"y":350,"width":220,"height":160,"type":"text","text":"Контент:\n- новости\n- статьи\n- галерея"},
+		{"id":"3e3dd86ce0d06dd2","x":-430,"y":630,"width":220,"height":60,"type":"text","text":"Аналитика (Метрика, Google Analytics)"},
+		{"id":"b7453af4d34efd21","x":120,"y":630,"width":220,"height":60,"type":"text","text":"Резервные копии"},
+		{"id":"c867d406441186e0","x":-158,"y":630,"width":230,"height":60,"type":"text","text":"Отчёты / Экспорт"},
+		{"id":"4153b475b2cd9707","x":-430,"y":740,"width":220,"height":60,"type":"text","text":"Администрация колледжа"},
+		{"id":"ba3a36fbaa40bb67","x":-308,"y":960,"width":530,"height":880,"type":"text","text":"### **1. Основной поток (Пользователи - Сайт):**\n\n**Входящие потоки:**\n\n- Запросы на просмотр информации\n\n- Данные для регистрации/авторизации\n\n- Заявки на участие в мероприятиях\n\n- Комментарии и обратная связь\n\n- Загрузка контента (фото, результаты)\n\n**Исходящие потоки:**\n\n- Страницы с информацией\n\n- Подтверждения регистрации\n\n- Календари событий\n\n- Турнирные таблицы\n\n- Личные кабинеты\n\n\n### **2. Внутренний поток (Сайт - База данных):**\n\n**Чтение данных:**\n\n- Информация для отображения\n\n- Проверка авторизации\n\n- Поиск событий\n\n**Запись данных:**\n\n- Новая регистрация\n\n- Результаты турниров\n\n- Добавление контента\n\n- Обновление профилей\n\n\n### **3. Внешние потоки:**\n\n- **К администрации:** Отчёты, статистика, KPI\n    \n- **К аналитике:** Данные для Яндекс.Метрики/Google Analytics\n    \n- **К резервным копиям:** Регулярное сохранение данных"},
+		{"id":"5ca9dc6e04810308","x":-118,"y":880,"width":150,"height":50,"type":"text","text":"#### Пояснение:"},
+		{"id":"a01c922517a2a24f","x":-163,"y":-140,"width":240,"height":70,"type":"text","text":"### Data Flow Diagram"}
+	],
+	"edges":[
+		{"id":"f2e06fe1c3f37904","fromNode":"ccabfba7112ed9d5","fromSide":"top","toNode":"eb85870c970234f3","toSide":"right","label":"ответы / данные"},
+		{"id":"a0a0e726594ce958","fromNode":"eb85870c970234f3","fromSide":"top","toNode":"ccabfba7112ed9d5","toSide":"left","label":"запросы / действия"},
+		{"id":"13a60e550b3a853c","fromNode":"ccabfba7112ed9d5","fromSide":"bottom","toNode":"1f28a0907b95f6bd","toSide":"top"},
+		{"id":"e54ec50fee250212","fromNode":"1f28a0907b95f6bd","fromSide":"bottom","toNode":"3e3dd86ce0d06dd2","toSide":"top"},
+		{"id":"e14a18c0ef2ebe91","fromNode":"1f28a0907b95f6bd","fromSide":"bottom","toNode":"c867d406441186e0","toSide":"top"},
+		{"id":"ccfab01e2a962a7d","fromNode":"1f28a0907b95f6bd","fromSide":"bottom","toNode":"b7453af4d34efd21","toSide":"top"},
+		{"id":"8b90ba4262b87423","fromNode":"3e3dd86ce0d06dd2","fromSide":"bottom","toNode":"4153b475b2cd9707","toSide":"top"},
+		{"id":"f016ceb1ec447a0d","fromNode":"1f28a0907b95f6bd","fromSide":"top","toNode":"ccabfba7112ed9d5","toSide":"bottom","label":"чтение / запись данных"}
+	]
+}
